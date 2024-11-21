@@ -23,6 +23,15 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
 * Run Air (live reload): `air`
 
 ### Installation
+#### FROM THIS TEMPLATE
+1. On Github click "Use this template" on the top right and create your own repository.
+2. Clone repository to your machine, and ensure Go, Templ, NPM, Node.js, and Air are installed (following the installation directions below). Configurations do not need to be changed or created.
+    * Go: Install Go from the [Go website](https://go.dev).
+    * Templ: Run `go install github.com/a-h/templ/cmd/templ@latest` to install templ.
+    * NPM/Node.js: Install the latest version from [NPM and Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+    * Air: Install Air using `go install github.com/air-verse/air@latest`.
+3. Install required packages for Tailwind using `npm install`.
+4. Run `npm run watch` and `air`, then navigate to [localhost:8080](http://localhost:8080).
 #### Go
 1. Install Go from the [Go website](https://go.dev).
 2. Initialize Go project using `go mod init <project>/<module>`
