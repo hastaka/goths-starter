@@ -154,7 +154,7 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
 * Here is all the code related to the front-end application, mostly made of templ files.
 #### `app/components/`
 * This folder contains re-usable components of the application.
-#### `app/layout`
+#### `app/layout/`
 * This folder contains layouts, which wrap around individual pages. This can contain things like headers and footers which are re-used.
 > [!IMPORTANT]
 > The file `layout.templ` is the root layout of the application. In this layout, we add the imports for the JS libraries used for the stack, as well as CSS:
