@@ -26,18 +26,57 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
 #### Go
 1. Install Go from the [Go website](https://go.dev).
 2. Initialize Go project using `go mod init <project>/<module>`
+> [!NOTE]
+> If you are using Github, I recommend using the Go template for your `.gitignore` file. Otherwise you can copy the below:
+> ```gitignore
+> # If you prefer the allow list template instead of the deny list, see community template:
+> # https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
+> #
+> # Binaries for programs and plugins
+> *.exe
+> *.exe~
+> *.dll
+> *.so
+> *.dylib
+> 
+> # Test binary, built with `go test -c`
+> *.test
+> 
+> # Output of the go coverage tool, specifically when used with LiteIDE
+> *.out
+> 
+> # Dependency directories (remove the comment below to include it)
+> # vendor/
+> 
+> # Go workspace file
+> go.work
+> go.work.sum
+> 
+> # env file
+> .env
+> ```
 #### Templ
 1. Run `go install github.com/a-h/templ/cmd/templ@latest` to install templ.
 2. Run `go get github.com/a-h/templ` to add to project.
 3. You can now generate templates by running `templ generate`.
+> [!NOTE]
+> If you are using git, make sure to add `node_modules` to your `.gitignore` file!
+> Also, if you are using Visual Studio Code, I recommend hiding the generated *_templ.go files using the following `.vscode/settings.json` configuration:
+> ```json
+> {
+>     "files.exclude": {
+>         "**/*_templ.go": true
+>     }
+> }
+> ```
 #### Tailwind CSS
 1. Ensure you have installed the latest version of NPM and Node.js (only needed for installation and generation of CSS).
 2. Initialize node module using `npm init -y`.
-    > [!NOTE]
-    > If you are using git, make sure to add `node_modules` to your `.gitignore` file!
-3. Install Tailwind using `npm install -D tailwindcss`.
-4. Initialize Tailwind `npx tailwindcss init`.
-5. Modify `tailwind.config.js` as follows to check for templ files:
+> [!NOTE]
+> If you are using git, make sure to add `node_modules` to your `.gitignore` file!
+1. Install Tailwind using `npm install -D tailwindcss`.
+2. Initialize Tailwind `npx tailwindcss init`.
+3. Modify `tailwind.config.js` as follows to check for templ files:
     ```javascript
     ...
     module.exports = {
@@ -49,7 +88,7 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
     }
     ...
     ```
-6. Modify `package.json` to create convenience scripts:
+4. Modify `package.json` to create convenience scripts:
     ```javascript
     ...
 
@@ -62,7 +101,7 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
     
     ...
     ```
-7. You can now run Tailwind live rebuild with `npm run watch`.
+5. You can now run Tailwind live rebuild with `npm run watch`.
 #### Air
 1. Install Air using `go install github.com/air-verse/air@latest`.
 2. Create the `.air.toml` file as follows:
@@ -97,8 +136,8 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
     clean_on_exit = true
     ```
 3. You can now run Air for live reload by using `air`. If you have not run `templ generate` yet, do so first to create the initial files.
-    > [!NOTE]
-    > If you are using git, make sure to add `air` to your `.gitignore` file!
+> [!NOTE]
+> If you are using git, make sure to add `air` to your `.gitignore` file!
 ### Project Structure
 #### `main.go`
 * Contains the main routing logic for the app.
@@ -118,21 +157,21 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
 * This folder contains re-usable components of the application.
 #### `app/layout`
 * This folder contains layouts, which wrap around individual pages. This can contain things like headers and footers which are re-used.
-    > [!IMPORTANT]
-    > The file `layout.templ` is the root layout of the application. In this layout, we add the imports for the JS libraries used for the stack, as well as CSS:
-    > ```html
-    > <!-- Tailwind CSS -->
-    > <link href="/static/css/tailwind.css" rel="stylesheet"/>
-    > <!-- Site-specific global CSS -->
-    > <link href="/static/css/site.css" rel="stylesheet"/>
-    > <!-- HTMX -->
-    > <script src="https://unpkg.com/htmx.org@1.9.12"></script>
-    > <!-- Iconfiy-Icon -->
-    > <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
-    > <!-- Shoelace Components -->
-    > <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/themes/light.css"/>
-    > <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/shoelace-autoloader.js"></script>
-    > ```
+> [!IMPORTANT]
+> The file `layout.templ` is the root layout of the application. In this layout, we add the imports for the JS libraries used for the stack, as well as CSS:
+> ```html
+> <!-- Tailwind CSS -->
+> <link href="/static/css/tailwind.css" rel="stylesheet"/>
+> <!-- Site-specific global CSS -->
+> <link href="/static/css/site.css" rel="stylesheet"/>
+> <!-- HTMX -->
+> <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+> <!-- Iconfiy-Icon -->
+> <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+> <!-- Shoelace Components -->
+> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/themes/light.css"/>
+> <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/shoelace-autoloader.js"></script>
+> ```
 #### `app/pages/`
 * This folder contains individual pages of the application.
 * Together with layouts, these are called in `main.go`.
