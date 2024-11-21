@@ -14,7 +14,7 @@ Supporting Tooling
 * [Air](https://github.com/air-verse/air) - live reload dev tool
 * [Iconify](https://iconify.design/) - multi-icon library
 
-_Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) for inspiration_
+_Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) and [Dave Eddy](https://www.daveeddy.com/) for inspiration_
 
 ### Basic Usage
 * Generate template: `templ generate`
