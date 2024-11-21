@@ -4,15 +4,15 @@ GoTTHS starter pack
 A system for building web apps without using React, Angular, Svelte, Vue or any other super-heavy framework. 
 
 ### Stack
-* [Go](https://go.dev) - serving files & backend
-* [Templ](https://templ.guide/) - template engine
-* [HTMX](https://htmx.org/docs/) - interaction of template & backend
-* [Tailwind CSS](https://tailwindcss.com/docs/) - styling
-* [Shoelace](https://shoelace.style/) - frontend web-components
+* [Go](https://go.dev) - web server, backend system, integration with databases (such as [PocketBase](https://pocketbase.io/)!)
+* [Templ](https://templ.guide/) - HTML composition engine to build HTML using Go, entirely on server-side
+* [Tailwind CSS](https://tailwindcss.com/docs/) - CSS styling framework with minimal footprint
+* [HTMX](https://htmx.org/docs/) - interaction library for AJAX, WebSockets, and more
+* [Shoelace](https://shoelace.style/) - frontend web-components library
 
 Supporting Tooling
-* [Air](https://github.com/air-verse/air) - live reload dev tool
-* [Iconify](https://iconify.design/) - multi-icon library
+* [Air](https://github.com/air-verse/air) - live reload development tool
+* [Iconify](https://iconify.design/) - multi-icon framework for any icon set
 
 _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) and [Dave Eddy](https://www.daveeddy.com/) for inspiration_
 
@@ -69,13 +69,13 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
 > }
 > ```
 #### Tailwind CSS
-1. Ensure you have installed the latest version of NPM and Node.js (only needed for installation and generation of CSS).
+1. Ensure you have installed the latest version of [NPM and Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (only needed for installation and generation of CSS).
 2. Initialize node module using `npm init -y`.
+3. Install Tailwind using `npm install -D tailwindcss`.
 > [!NOTE]
 > If you are using git, make sure to add `node_modules` to your `.gitignore` file!
-1. Install Tailwind using `npm install -D tailwindcss`.
-2. Initialize Tailwind `npx tailwindcss init`.
-3. Modify `tailwind.config.js` as follows to check for templ files:
+4. Initialize Tailwind `npx tailwindcss init`.
+5. Modify `tailwind.config.js` as follows to check for templ files:
     ```javascript
     ...
     module.exports = {
@@ -87,7 +87,7 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
     }
     ...
     ```
-4. Modify `package.json` to create convenience scripts:
+6. Modify `package.json` to create convenience scripts:
     ```javascript
     ...
 
@@ -100,7 +100,7 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
     
     ...
     ```
-5. You can now run Tailwind live rebuild with `npm run watch`.
+7. You can now run Tailwind live rebuild with `npm run watch`.
 #### Air
 1. Install Air using `go install github.com/air-verse/air@latest`.
 2. Create the `.air.toml` file as follows:
@@ -175,4 +175,4 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
 * This folder contains individual pages of the application.
 * Together with layouts, these are called in `main.go`.
 #### `app/partial/`
-* This folder contains partials, which can be inserted in pages when HTMX is used.
+* This folder contains partials, which can be composed in pages, components, or other partials using HTMX and Templ.
