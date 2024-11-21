@@ -1,0 +1,29 @@
+package layout
+
+templ Layout(children ...templ.Component) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>GOTHS Starter</title>
+			<!-- Tailwind CSS -->
+			<link href="/static/css/tailwind.css" rel="stylesheet"/>
+			<!-- Site-specific global CSS -->
+			<link href="/static/css/site.css" rel="stylesheet"/>
+			<!-- HTMX -->
+			<script src="https://unpkg.com/htmx.org@1.9.12"></script>
+			<!-- Iconfiy-Icon -->
+			<script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+			<!-- Shoelace Components -->
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/themes/light.css"/>
+			<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/shoelace-autoloader.js"></script>
+		</head>
+		<body class="absolute top-0 left-0 h-full w-full flex flex-col bg-primary">
+			for _, child := range children {
+				@child
+			}
+			
+		</body>
+	</html>
+}
