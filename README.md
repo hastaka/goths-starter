@@ -60,8 +60,7 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
 2. Run `go get github.com/a-h/templ` to add to project.
 3. You can now generate templates by running `templ generate`.
 > [!NOTE]
-> If you are using git, make sure to add `node_modules` to your `.gitignore` file!
-> Also, if you are using Visual Studio Code, I recommend hiding the generated *_templ.go files using the following `.vscode/settings.json` configuration:
+> If you are using Visual Studio Code, I recommend hiding the generated *_templ.go files using the following `.vscode/settings.json` configuration:
 > ```json
 > {
 >     "files.exclude": {
