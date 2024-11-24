@@ -3,7 +3,7 @@ tmp_dir = "air"
 
 [build]
 bin = "./air/main.exe"
-cmd = "templ generate && go build -o ./air/main.exe ."
+cmd = "templ generate && npm run dev && go build -o ./air/main.exe ."
 delay = 1000
 exclude_dir = ["static", "node_modules"]
 exclude_regex = [".*_templ.go"]
