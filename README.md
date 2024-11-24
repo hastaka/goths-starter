@@ -32,7 +32,7 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
 >     * NPM/Node.js: Install the latest version from [NPM and Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 >     * Air: Install Air using `go install github.com/air-verse/air@latest`.
 > 3. Install required packages for Tailwind using `npm install`.
-> 4. Run `npm run watch` and `air`, then navigate to [localhost:8080](http://localhost:8080).
+> 4. Run `air`, then navigate to [localhost:8080](http://localhost:8080).
 #### Go
 1. Install Go from the [Go website](https://go.dev).
 2. Initialize Go project using `go mod init <project>/<module>`
@@ -120,7 +120,7 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
 
     [build]
     bin = "./air/main.exe"
-    cmd = "templ generate && go build -o ./air/main.exe ."
+    cmd = "templ generate && npm run dev && go build -o ./air/main.exe ."
     delay = 1000
     exclude_dir = ["static", "node_modules"]
     exclude_regex = [".*_templ.go"]
@@ -144,7 +144,7 @@ _Thanks to [Murtaza Udaipurwala](https://blog.murtazau.xyz/templ-tailwind-htmx) 
     [misc]
     clean_on_exit = true
     ```
-3. You can now run Air for live reload by using `air`. If you have not run `templ generate` yet, do so first to create the initial files.
+3. You can now run Air for live reload by using `air`. If you have not run `templ generate` yet, do so first to create the initial files. After this setup, only `air` needs to be run to generate TEMPL files, compile Tailwind, and run the Go server.
 > [!NOTE]
 > If you are using git, make sure to add `air` to your `.gitignore` file!
 ### Project Structure
