@@ -1,6 +1,6 @@
 package layout
 
-templ Layout(children ...templ.Component) {
+templ Layout(path string, children ...templ.Component) {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -23,7 +23,6 @@ templ Layout(children ...templ.Component) {
 			for _, child := range children {
 				@child
 			}
-			
 		</body>
 	</html>
 }

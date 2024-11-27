@@ -2,10 +2,11 @@
   "name": "goths-starter",
   "version": "1.0.0",
   "description": "GoTTHS starter pack",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tailwindcss build -o static/css/tailwind.css --minify",
+    "dev": "tailwindcss build -o static/css/tailwind.css",
     "watch": "tailwindcss build -o static/css/tailwind.css --watch"
   },
   "keywords": [],
